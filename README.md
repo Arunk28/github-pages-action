@@ -16,8 +16,37 @@ https://github.com/facebook/create-react-app
 5.goto package.json and add the value in  that file
 as  "homepage": "https://username.github.io/reponame"
 
-6.go to actions > select node js template and paste the code which is mentioned below link
-https://gist.github.com/Arunk28/21bdb8e11902c98c84f61edb18ed4964#file-githubpages-deploy
+6.go to actions > select node js template and paste the code which is mentioned below 
+
+```
+name: Build CI
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2 # If you're using actions/checkout@v2 you must set persist-credentials to false in most cases for the deployment to work correctly.
+        with:
+          persist-credentials: false
+
+      - name: Install and Build 🔧 # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
+        run: |
+          npm install
+          npm run build
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          GITHUB_TOKEN: ${{ secrets.<token key name here> }}
+          BRANCH: gh-pages # The branch the action should deploy to.
+          FOLDER: build # The folder the action should deploy.
+          CLEAN: false
+          
+          ```
+          
 
 and made a commit
 
