@@ -44,8 +44,7 @@ jobs:
           BRANCH: gh-pages # The branch the action should deploy to.
           FOLDER: build # The folder the action should deploy.
           CLEAN: false
-          
-          ```
+```
           
 
 and made a commit
