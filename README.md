@@ -14,7 +14,7 @@ https://github.com/facebook/create-react-app
 4.create to the repo settings > secrets > paste the token in value and name it for the token as KEY
 
 5.goto package.json and add the value in  that file
-as  "homepage": "https://username.github.io/repo name"
+as  "homepage": "https://username.github.io/reponame"
 
 6.go to actions > select node js template and paste the code which is mentioned below link
 https://gist.github.com/Arunk28/21bdb8e11902c98c84f61edb18ed4964#file-githubpages-deploy
